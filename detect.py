@@ -5,6 +5,8 @@ from PIL import Image
 from typing import List
 import pytesseract
 import cv2
+import numpy as np
+import ntpath
 
 ROOT_DIR: str = os.path.dirname(os.path.abspath(__file__))
 
@@ -15,108 +17,162 @@ def create_images() -> None:
     im = Image.open(latest_file)
 
     # Plyer 1 stats
-    name_1 = im.crop((335, 355, 485, 380)).resize((300,50))
-    name_1.save(os.path.join(ROOT_DIR, "images\\P1\\name.jpg"), "PNG")
-    kills_1 = im.crop((835, 345, 870, 380)).resize((100,100))
-    kills_1.save(os.path.join(ROOT_DIR, "images\\P1\\kills.jpg"), "PNG")
-    Deaths_1 = im.crop((885, 345, 920, 380)).resize((100,100))
-    Deaths_1.save(os.path.join(ROOT_DIR, "images\\P1\\Deaths.jpg"), "PNG")
-    Assists_1 = im.crop((935, 345, 970, 380)).resize((100,100))
-    Assists_1.save(os.path.join(ROOT_DIR, "images\\P1\\Assists.jpg"), "PNG")
+    name_1 = im.crop((335, 355, 485, 380)).resize((300, 50))
+    name_1.save(os.path.join(ROOT_DIR, "images\\P1\\name.jpg"), "png")
+    kills_1 = im.crop((835, 345, 870, 380)).resize((100, 100))
+    kills_1.save(os.path.join(ROOT_DIR, "images\\P1\\kills.jpg"), "png")
+    Deaths_1 = im.crop((885, 345, 920, 380)).resize((100, 100))
+    Deaths_1.save(os.path.join(ROOT_DIR, "images\\P1\\Deaths.jpg"), "png")
+    Assists_1 = im.crop((935, 345, 970, 380)).resize((100, 100))
+    Assists_1.save(os.path.join(ROOT_DIR, "images\\P1\\Assists.jpg"), "png")
+    Character_1 = im.crop((280, 340, 340, 390))
+    Character_1.save(os.path.join(ROOT_DIR, "images\\P1\\Character.jpg"), "png")
 
     # Player 2 stats
-    name_2 = im.crop((335, 405, 485, 430)).resize((300,50))
-    name_2.save(os.path.join(ROOT_DIR, "images\\P2\\name.jpg"), "PNG")
-    kills_2 = im.crop((835, 400, 870, 435)).resize((100,100))
-    kills_2.save(os.path.join(ROOT_DIR, "images\\P2\\kills.jpg"), "PNG")
-    Deaths_2 = im.crop((885, 400, 920, 435)).resize((100,100))
-    Deaths_2.save(os.path.join(ROOT_DIR, "images\\P2\\Deaths.jpg"), "PNG")
-    Assists_2 = im.crop((935, 400, 970, 435)).resize((100,100))
-    Assists_2.save(os.path.join(ROOT_DIR, "images\\P2\\Assists.jpg"), "PNG")
+    name_2 = im.crop((335, 405, 485, 430)).resize((300, 50))
+    name_2.save(os.path.join(ROOT_DIR, "images\\P2\\name.jpg"), "png")
+    kills_2 = im.crop((835, 400, 870, 435)).resize((100, 100))
+    kills_2.save(os.path.join(ROOT_DIR, "images\\P2\\kills.jpg"), "png")
+    Deaths_2 = im.crop((885, 400, 920, 435)).resize((100, 100))
+    Deaths_2.save(os.path.join(ROOT_DIR, "images\\P2\\Deaths.jpg"), "png")
+    Assists_2 = im.crop((935, 400, 970, 435)).resize((100, 100))
+    Assists_2.save(os.path.join(ROOT_DIR, "images\\P2\\Assists.jpg"), "png")
+    Character_2 = im.crop((280, 393, 340, 443))
+    Character_2.save(os.path.join(ROOT_DIR, "images\\P2\\Character.jpg"), "png")
 
     # Player 3 stats
-    name_3 = im.crop((335, 460, 485, 485)).resize((300,50))
-    name_3.save(os.path.join(ROOT_DIR, "images\\P3\\name.jpg"), "PNG")
-    kills_3 = im.crop((835, 450, 870, 485)).resize((100,100))
-    kills_3.save(os.path.join(ROOT_DIR, "images\\P3\\kills.jpg"), "PNG")
-    Deaths_3 = im.crop((885, 450, 920, 485)).resize((100,100))
-    Deaths_3.save(os.path.join(ROOT_DIR, "images\\P3\\Deaths.jpg"), "PNG")
-    Assists_3 = im.crop((935, 450, 970, 485)).resize((100,100))
-    Assists_3.save(os.path.join(ROOT_DIR, "images\\P3\\Assists.jpg"), "PNG")
+    name_3 = im.crop((335, 460, 485, 485)).resize((300, 50))
+    name_3.save(os.path.join(ROOT_DIR, "images\\P3\\name.jpg"), "png")
+    kills_3 = im.crop((835, 450, 870, 485)).resize((100, 100))
+    kills_3.save(os.path.join(ROOT_DIR, "images\\P3\\kills.jpg"), "png")
+    Deaths_3 = im.crop((885, 450, 920, 485)).resize((100, 100))
+    Deaths_3.save(os.path.join(ROOT_DIR, "images\\P3\\Deaths.jpg"), "png")
+    Assists_3 = im.crop((935, 450, 970, 485)).resize((100, 100))
+    Assists_3.save(os.path.join(ROOT_DIR, "images\\P3\\Assists.jpg"), "png")
+    Character_3 = im.crop((280, 445, 340, 495))
+    Character_3.save(os.path.join(ROOT_DIR, "images\\P3\\Character.jpg"), "png")
 
     # Player 4 stats
-    name_4 = im.crop((335, 510, 485, 535)).resize((300,50))
-    name_4.save(os.path.join(ROOT_DIR, "images\\P4\\name.jpg"), "PNG")
-    kills_4 = im.crop((835, 505, 870, 540)).resize((100,100))
-    kills_4.save(os.path.join(ROOT_DIR, "images\\P4\\kills.jpg"), "PNG")
-    Deaths_4 = im.crop((885, 505, 920, 540)).resize((100,100))
-    Deaths_4.save(os.path.join(ROOT_DIR, "images\\P4\\Deaths.jpg"), "PNG")
-    Assists_4 = im.crop((935, 505, 970, 540)).resize((100,100))
-    Assists_4.save(os.path.join(ROOT_DIR, "images\\P4\\Assists.jpg"), "PNG")
+    name_4 = im.crop((335, 510, 485, 535)).resize((300, 50))
+    name_4.save(os.path.join(ROOT_DIR, "images\\P4\\name.jpg"), "png")
+    kills_4 = im.crop((835, 505, 870, 540)).resize((100, 100))
+    kills_4.save(os.path.join(ROOT_DIR, "images\\P4\\kills.jpg"), "png")
+    Deaths_4 = im.crop((885, 505, 920, 540)).resize((100, 100))
+    Deaths_4.save(os.path.join(ROOT_DIR, "images\\P4\\Deaths.jpg"), "png")
+    Assists_4 = im.crop((935, 505, 970, 540)).resize((100, 100))
+    Assists_4.save(os.path.join(ROOT_DIR, "images\\P4\\Assists.jpg"), "png")
+    Character_4 = im.crop((280, 497, 340, 547))
+    Character_4.save(os.path.join(ROOT_DIR, "images\\P4\\Character.jpg"), "png")
 
     # Player 5 stats
-    name_5 = im.crop((335, 560, 485, 585)).resize((300,50))
-    name_5.save(os.path.join(ROOT_DIR, "images\\P5\\name.jpg"), "PNG")
-    kills_5 = im.crop((835, 555, 870, 590)).resize((100,100))
-    kills_5.save(os.path.join(ROOT_DIR, "images\\P5\\kills.jpg"), "PNG")
-    Deaths_5 = im.crop((885, 555, 920, 590)).resize((100,100))
-    Deaths_5.save(os.path.join(ROOT_DIR, "images\\P5\\Deaths.jpg"), "PNG")
-    Assists_5 = im.crop((935, 555, 970, 590)).resize((100,100))
-    Assists_5.save(os.path.join(ROOT_DIR, "images\\P5\\Assists.jpg"), "PNG")
+    name_5 = im.crop((335, 560, 485, 585)).resize((300, 50))
+    name_5.save(os.path.join(ROOT_DIR, "images\\P5\\name.jpg"), "png")
+    kills_5 = im.crop((835, 555, 870, 590)).resize((100, 100))
+    kills_5.save(os.path.join(ROOT_DIR, "images\\P5\\kills.jpg"), "png")
+    Deaths_5 = im.crop((885, 555, 920, 590)).resize((100, 100))
+    Deaths_5.save(os.path.join(ROOT_DIR, "images\\P5\\Deaths.jpg"), "png")
+    Assists_5 = im.crop((935, 555, 970, 590)).resize((100, 100))
+    Assists_5.save(os.path.join(ROOT_DIR, "images\\P5\\Assists.jpg"), "png")
+    Character_5 = im.crop((280, 549, 340, 599))
+    Character_5.save(os.path.join(ROOT_DIR, "images\\P5\\Character.jpg"), "png")
 
     # Player 6 stats
-    name_6 = im.crop((335, 615, 485, 640)).resize((300,50))
-    name_6.save(os.path.join(ROOT_DIR, "images\\P6\\name.jpg"), "PNG")
-    kills_6 = im.crop((835, 610, 870, 645)).resize((100,100))
-    kills_6.save(os.path.join(ROOT_DIR, "images\\P6\\kills.jpg"), "PNG")
-    Deaths_6 = im.crop((885, 610, 920, 645)).resize((100,100))
-    Deaths_6.save(os.path.join(ROOT_DIR, "images\\P6\\Deaths.jpg"), "PNG")
-    Assists_6 = im.crop((935, 610, 970, 645)).resize((100,100))
-    Assists_6.save(os.path.join(ROOT_DIR, "images\\P6\\Assists.jpg"), "PNG")
+    name_6 = im.crop((335, 615, 485, 640)).resize((300, 50))
+    name_6.save(os.path.join(ROOT_DIR, "images\\P6\\name.jpg"), "png")
+    kills_6 = im.crop((835, 610, 870, 645)).resize((100, 100))
+    kills_6.save(os.path.join(ROOT_DIR, "images\\P6\\kills.jpg"), "png")
+    Deaths_6 = im.crop((885, 610, 920, 645)).resize((100, 100))
+    Deaths_6.save(os.path.join(ROOT_DIR, "images\\P6\\Deaths.jpg"), "png")
+    Assists_6 = im.crop((935, 610, 970, 645)).resize((100, 100))
+    Assists_6.save(os.path.join(ROOT_DIR, "images\\P6\\Assists.jpg"), "png")
+    Character_6 = im.crop((280, 601, 340, 651))
+    Character_6.save(os.path.join(ROOT_DIR, "images\\P6\\Character.jpg"), "png")
 
     # Player 7 stats
-    name_7 = im.crop((335, 665, 485, 690)).resize((300,50))
-    name_7.save(os.path.join(ROOT_DIR, "images\\P7\\name.jpg"), "PNG")
-    kills_7 = im.crop((835, 660, 870, 695)).resize((100,100))
-    kills_7.save(os.path.join(ROOT_DIR, "images\\P7\\kills.jpg"), "PNG")
-    Deaths_7 = im.crop((885, 660, 920, 695)).resize((100,100))
-    Deaths_7.save(os.path.join(ROOT_DIR, "images\\P7\\Deaths.jpg"), "PNG")
-    Assists_7 = im.crop((935, 660, 970, 695)).resize((100,100))
-    Assists_7.save(os.path.join(ROOT_DIR, "images\\P7\\Assists.jpg"), "PNG")
+    name_7 = im.crop((335, 665, 485, 690)).resize((300, 50))
+    name_7.save(os.path.join(ROOT_DIR, "images\\P7\\name.jpg"), "png")
+    kills_7 = im.crop((835, 660, 870, 695)).resize((100, 100))
+    kills_7.save(os.path.join(ROOT_DIR, "images\\P7\\kills.jpg"), "png")
+    Deaths_7 = im.crop((885, 660, 920, 695)).resize((100, 100))
+    Deaths_7.save(os.path.join(ROOT_DIR, "images\\P7\\Deaths.jpg"), "png")
+    Assists_7 = im.crop((935, 660, 970, 695)).resize((100, 100))
+    Assists_7.save(os.path.join(ROOT_DIR, "images\\P7\\Assists.jpg"), "png")
+    Character_7 = im.crop((280, 653, 340, 703))
+    Character_7.save(os.path.join(ROOT_DIR, "images\\P7\\Character.jpg"), "png")
 
     # Player 8 stats
-    name_8 = im.crop((335, 715, 485, 740)).resize((300,50))
-    name_8.save(os.path.join(ROOT_DIR, "images\\P8\\name.jpg"), "PNG")
-    kills_8 = im.crop((835, 710, 870, 745)).resize((100,100))
-    kills_8.save(os.path.join(ROOT_DIR, "images\\P8\\kills.jpg"), "PNG")
-    Deaths_8 = im.crop((885, 710, 920, 745)).resize((100,100))
-    Deaths_8.save(os.path.join(ROOT_DIR, "images\\P8\\Deaths.jpg"), "PNG")
-    Assists_8 = im.crop((935, 710, 970, 745)).resize((100,100))
-    Assists_8.save(os.path.join(ROOT_DIR, "images\\P8\\Assists.jpg"), "PNG")
+    name_8 = im.crop((335, 715, 485, 740)).resize((300, 50))
+    name_8.save(os.path.join(ROOT_DIR, "images\\P8\\name.jpg"), "png")
+    kills_8 = im.crop((835, 710, 870, 745)).resize((100, 100))
+    kills_8.save(os.path.join(ROOT_DIR, "images\\P8\\kills.jpg"), "png")
+    Deaths_8 = im.crop((885, 710, 920, 745)).resize((100, 100))
+    Deaths_8.save(os.path.join(ROOT_DIR, "images\\P8\\Deaths.jpg"), "png")
+    Assists_8 = im.crop((935, 710, 970, 745)).resize((100, 100))
+    Assists_8.save(os.path.join(ROOT_DIR, "images\\P8\\Assists.jpg"), "png")
+    Character_4 = im.crop((280, 705, 340, 755))
+    Character_4.save(os.path.join(ROOT_DIR, "images\\P8\\Character.jpg"), "png")
 
     # Player 9 stats
-    name_9 = im.crop((335, 770, 485, 795)).resize((300,50))
-    name_9.save(os.path.join(ROOT_DIR, "images\\P9\\name.jpg"), "PNG")
-    kills_9 = im.crop((835, 765, 870, 800)).resize((100,100))
-    kills_9.save(os.path.join(ROOT_DIR, "images\\P9\\kills.jpg"), "PNG")
-    Deaths_9 = im.crop((885, 765, 920, 800)).resize((100,100))
-    Deaths_9.save(os.path.join(ROOT_DIR, "images\\P9\\Deaths.jpg"), "PNG")
-    Assists_9 = im.crop((935, 765, 970, 800)).resize((100,100))
-    Assists_9.save(os.path.join(ROOT_DIR, "images\\P9\\Assists.jpg"), "PNG")
+    name_9 = im.crop((335, 770, 485, 795)).resize((300, 50))
+    name_9.save(os.path.join(ROOT_DIR, "images\\P9\\name.jpg"), "png")
+    kills_9 = im.crop((835, 765, 870, 800)).resize((100, 100))
+    kills_9.save(os.path.join(ROOT_DIR, "images\\P9\\kills.jpg"), "png")
+    Deaths_9 = im.crop((885, 765, 920, 800)).resize((100, 100))
+    Deaths_9.save(os.path.join(ROOT_DIR, "images\\P9\\Deaths.jpg"), "png")
+    Assists_9 = im.crop((935, 765, 970, 800)).resize((100, 100))
+    Assists_9.save(os.path.join(ROOT_DIR, "images\\P9\\Assists.jpg"), "png")
+    Character_4 = im.crop((280, 757, 340, 807))
+    Character_4.save(os.path.join(ROOT_DIR, "images\\P9\\Character.jpg"), "png")
 
     # Player 10 stats
-    name_10 = im.crop((335, 820, 485, 845)).resize((300,50))
-    name_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\name.jpg"), "PNG")
-    kills_10 = im.crop((835, 815, 870, 850)).resize((100,100))
-    kills_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\kills.jpg"), "PNG")
-    Deaths_10 = im.crop((885, 815, 920, 850)).resize((100,100))
-    Deaths_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\Deaths.jpg"), "PNG")
-    Assists_10 = im.crop((935, 815, 970, 850)).resize((100,100))
-    Assists_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\Assists.jpg"), "PNG")
+    name_10 = im.crop((335, 820, 485, 845)).resize((300, 50))
+    name_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\name.jpg"), "png")
+    kills_10 = im.crop((835, 815, 870, 850)).resize((100, 100))
+    kills_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\kills.jpg"), "png")
+    Deaths_10 = im.crop((885, 815, 920, 850)).resize((100, 100))
+    Deaths_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\Deaths.jpg"), "png")
+    Assists_10 = im.crop((935, 815, 970, 850)).resize((100, 100))
+    Assists_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\Assists.jpg"), "png")
+    Character_4 = im.crop((280, 809, 340, 859))
+    Character_4.save(os.path.join(ROOT_DIR, "images\\P9+1\\Character.jpg"), "png")
+
+
+def run_comparison(file_path) -> str:
+    img1 = cv2.imread(file_path, 0)
+    chars = glob(f"{ROOT_DIR}\char_check\*")
+    comparisons: List[List[str], List[int]] = [chars, []]
+
+    for image in chars:
+        img2 = cv2.imread(image, 0)
+
+        # --- take the absolute difference of the images ---
+        res = cv2.absdiff(img1, img2)
+
+        # --- convert the result to integer type ---
+        res = res.astype(np.uint8)
+
+        # --- find percentage difference based on number of pixels that are not zero ---
+        percentage = (np.count_nonzero(res) * 100) / res.size
+        comparisons[1].append(percentage)
+    return os.path.splitext(
+        ntpath.basename(comparisons[0][comparisons[1].index(min(comparisons[1]))])
+    )[0].split('_', 1)[0]
 
 
 def read_images() -> List[List[str]]:
-    player_arr: List[List[str]] = [["Name", "Kills", "Deaths", "Assists", "Character"],[], [], [], [], [], [], [], [], [], []]
+    player_arr: List[List[str]] = [
+        ["Name", "Kills", "Deaths", "Assists", "Character"],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+    ]
     # Create screenshots from initial screenshot
     create_images()
 
@@ -142,7 +198,9 @@ def read_images() -> List[List[str]]:
         thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
             1
         ]
-        data = pytesseract.image_to_string(thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789" )
+        data = pytesseract.image_to_string(
+            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
+        )
         player_arr[i].append(data.strip())
 
         # Assists
@@ -151,7 +209,9 @@ def read_images() -> List[List[str]]:
         thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
             1
         ]
-        data = pytesseract.image_to_string(thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789")
+        data = pytesseract.image_to_string(
+            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
+        )
         player_arr[i].append(data.strip())
 
         # Deaths
@@ -160,10 +220,19 @@ def read_images() -> List[List[str]]:
         thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
             1
         ]
-        data = pytesseract.image_to_string(thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789")
+        data = pytesseract.image_to_string(
+            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
+        )
         player_arr[i].append(data.strip())
+
+        # Character
+        image_path = f"{folders[i - 1]}\\Character.jpg"
+        player_arr[i].append(run_comparison(image_path))
 
     print(player_arr)
     return player_arr
 
-#create_images()
+
+# create_images()
+# print(run_comparison(r"F:\programming\Valorant Detecor\images\P1\character.jpg"))
+# print(read_images())
