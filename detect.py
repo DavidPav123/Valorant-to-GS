@@ -156,7 +156,7 @@ def run_comparison(file_path) -> str:
         comparisons[1].append(percentage)
     return os.path.splitext(
         ntpath.basename(comparisons[0][comparisons[1].index(min(comparisons[1]))])
-    )[0].split('_', 1)[0]
+    )[0].split("_", 1)[0]
 
 
 def read_images() -> List[List[str]]:

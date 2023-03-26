@@ -57,6 +57,6 @@ def update_sheet(values_to_update, range_to_update) -> None:
 
         print(response)
     except HttpError as err:
-        #uncomment if not working for some reason to see actual error
-        #print(err)
+        # uncomment if not working for some reason to see actual error
+        # print(err)
         print("Waiting for game to start")
