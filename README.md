@@ -8,8 +8,8 @@ Usage instructions:
 
 3. Installing the pytesseract package using the following pip command: *pip install pytesseract*
 
-4. Change the **path_to_tesseract** variable on line 180 in the *detect.py* file
+4. Change the **path_to_tesseract** variable on line 180 in *detect.py* 
 
-5. Change the **SPREADSHEET_ID** variable on line 16 in the *google_sheets_push.py* file
+5. Change the **SPREADSHEET_ID** variable on line 16 in *google_sheets_push.py*
 
 6. To run the program put a screenshot of the Valorant end game screen in the Screenshots folder and then run the Stats_to_GS.py file.
