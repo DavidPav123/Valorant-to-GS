@@ -12,4 +12,4 @@ Usage instructions:
 
 5. Change the **SPREADSHEET_ID** variable on line 16 in *google_sheets_push.py*
 
-6. To run the program put a screenshot of the Valorant end game screen in the Screenshots folder and then run the Stats_to_GS.py file.
+6. To run the program put a screenshot of the Valorant end game screen in the **Screenshots** folder and then run *Stats_to_GS.py*.
