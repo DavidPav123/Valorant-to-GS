@@ -5,7 +5,6 @@ import os.path
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient import discovery
 
@@ -57,6 +56,4 @@ def update_sheet(values_to_update, range_to_update) -> None:
 
         print(response)
     except HttpError as err:
-        # uncomment if not working for some reason to see actual error
-        # print(err)
-        print("Waiting for game to start")
+        print(err)
