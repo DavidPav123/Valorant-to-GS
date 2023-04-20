@@ -11,10 +11,10 @@ import ntpath
 ROOT_DIR: str = os.path.dirname(os.path.abspath(__file__))
 
 
-def create_images() -> None:
-    list_of_files: List[str] = glob(f"{ROOT_DIR}\screenshots\*")
-    latest_file: str = max(list_of_files, key=getctime)
-    im = Image.open(latest_file)
+def create_images(file_path) -> None:
+    #list_of_files: List[str] = glob(f"{ROOT_DIR}\screenshots\*")
+    #latest_file: str = max(list_of_files, key=getctime)
+    im = Image.open(file_path)
 
     # Plyer 1 stats
     name_1 = im.crop((335, 355, 485, 380)).resize((300, 50))
@@ -159,7 +159,7 @@ def run_comparison(file_path) -> str:
     )[0].split("_", 1)[0]
 
 
-def read_images() -> List[List[str]]:
+def read_images(file_path) -> List[List[str]]:
     player_arr: List[List[str]] = [
         ["Name", "Kills", "Deaths", "Assists", "Character"],
         [],
@@ -174,7 +174,7 @@ def read_images() -> List[List[str]]:
         [],
     ]
     # Create screenshots from initial screenshot
-    create_images()
+    create_images(file_path)
 
     # Defining paths to tesseract.exe
     path_to_tesseract: str = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
