@@ -7,6 +7,7 @@ import pytesseract
 import cv2
 import numpy as np
 import ntpath
+import csv
 
 ROOT_DIR: str = os.path.dirname(os.path.abspath(__file__))
 
@@ -232,7 +233,7 @@ def read_images(file_path) -> List[List[str]]:
     print(player_arr)
     return player_arr
 
-
-# create_images()
-# print(run_comparison(r"F:\programming\Valorant Detecor\images\P1\character.jpg"))
-# print(read_images())
+def export_to_csv(rows,file_name):
+    with open(f'CSVs/{file_name}', 'w') as f:
+        write = csv.writer(f, delimiter=',', lineterminator="\n")
+        write.writerows(rows)
