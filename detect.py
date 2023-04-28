@@ -28,6 +28,11 @@ def create_images(file_path) -> None:
     Assists_1.save(os.path.join(ROOT_DIR, "images\\P1\\Assists.jpg"), "png")
     Character_1 = im.crop((280, 340, 340, 390))
     Character_1.save(os.path.join(ROOT_DIR, "images\\P1\\Character.jpg"), "png")
+    ACS_1 = im.crop((705, 345, 755, 380)).resize((100, 100))
+    ACS_1.save(os.path.join(ROOT_DIR, "images\\P1\\ACS.jpg"), "png")
+    FB_1 = im.crop((1175, 345, 1225, 380)).resize((100, 100))
+    FB_1.save(os.path.join(ROOT_DIR, "images\\P1\\FB.jpg"), "png")
+    
 
     # Player 2 stats
     name_2 = im.crop((335, 405, 485, 430)).resize((300, 50))
@@ -40,6 +45,10 @@ def create_images(file_path) -> None:
     Assists_2.save(os.path.join(ROOT_DIR, "images\\P2\\Assists.jpg"), "png")
     Character_2 = im.crop((280, 393, 340, 443))
     Character_2.save(os.path.join(ROOT_DIR, "images\\P2\\Character.jpg"), "png")
+    ACS_2 = im.crop((705, 400, 755, 435)).resize((100, 100))
+    ACS_2.save(os.path.join(ROOT_DIR, "images\\P2\\ACS.jpg"), "png")
+    FB_2 = im.crop((1175, 400, 1225, 435)).resize((100, 100))
+    FB_2.save(os.path.join(ROOT_DIR, "images\\P2\\FB.jpg"), "png")
 
     # Player 3 stats
     name_3 = im.crop((335, 460, 485, 485)).resize((300, 50))
@@ -52,6 +61,10 @@ def create_images(file_path) -> None:
     Assists_3.save(os.path.join(ROOT_DIR, "images\\P3\\Assists.jpg"), "png")
     Character_3 = im.crop((280, 445, 340, 495))
     Character_3.save(os.path.join(ROOT_DIR, "images\\P3\\Character.jpg"), "png")
+    ACS_3 = im.crop((705, 450, 755, 485)).resize((100, 100))
+    ACS_3.save(os.path.join(ROOT_DIR, "images\\P3\\ACS.jpg"), "png")
+    FB_3 = im.crop((1175, 450, 1225, 485)).resize((100, 100))
+    FB_3.save(os.path.join(ROOT_DIR, "images\\P3\\FB.jpg"), "png")
 
     # Player 4 stats
     name_4 = im.crop((335, 510, 485, 535)).resize((300, 50))
@@ -64,6 +77,10 @@ def create_images(file_path) -> None:
     Assists_4.save(os.path.join(ROOT_DIR, "images\\P4\\Assists.jpg"), "png")
     Character_4 = im.crop((280, 497, 340, 547))
     Character_4.save(os.path.join(ROOT_DIR, "images\\P4\\Character.jpg"), "png")
+    ACS_4 = im.crop((705, 505, 755, 540)).resize((100, 100))
+    ACS_4.save(os.path.join(ROOT_DIR, "images\\P4\\ACS.jpg"), "png")
+    FB_4 = im.crop((1175, 505, 1225, 540)).resize((100, 100))
+    FB_4.save(os.path.join(ROOT_DIR, "images\\P4\\FB.jpg"), "png")
 
     # Player 5 stats
     name_5 = im.crop((335, 560, 485, 585)).resize((300, 50))
@@ -76,6 +93,10 @@ def create_images(file_path) -> None:
     Assists_5.save(os.path.join(ROOT_DIR, "images\\P5\\Assists.jpg"), "png")
     Character_5 = im.crop((280, 549, 340, 599))
     Character_5.save(os.path.join(ROOT_DIR, "images\\P5\\Character.jpg"), "png")
+    ACS_5 = im.crop((705, 555, 755, 590)).resize((100, 100))
+    ACS_5.save(os.path.join(ROOT_DIR, "images\\P5\\ACS.jpg"), "png")
+    FB_5 = im.crop((1175, 555, 1225, 590)).resize((100, 100))
+    FB_5.save(os.path.join(ROOT_DIR, "images\\P5\\FB.jpg"), "png")
 
     # Player 6 stats
     name_6 = im.crop((335, 615, 485, 640)).resize((300, 50))
@@ -88,6 +109,10 @@ def create_images(file_path) -> None:
     Assists_6.save(os.path.join(ROOT_DIR, "images\\P6\\Assists.jpg"), "png")
     Character_6 = im.crop((280, 601, 340, 651))
     Character_6.save(os.path.join(ROOT_DIR, "images\\P6\\Character.jpg"), "png")
+    ACS_6 = im.crop((705, 610, 755, 645)).resize((100, 100))
+    ACS_6.save(os.path.join(ROOT_DIR, "images\\P6\\ACS.jpg"), "png")
+    FB_6 = im.crop((1175, 610, 1225, 645)).resize((100, 100))
+    FB_6.save(os.path.join(ROOT_DIR, "images\\P6\\FB.jpg"), "png")
 
     # Player 7 stats
     name_7 = im.crop((335, 665, 485, 690)).resize((300, 50))
@@ -100,6 +125,10 @@ def create_images(file_path) -> None:
     Assists_7.save(os.path.join(ROOT_DIR, "images\\P7\\Assists.jpg"), "png")
     Character_7 = im.crop((280, 653, 340, 703))
     Character_7.save(os.path.join(ROOT_DIR, "images\\P7\\Character.jpg"), "png")
+    ACS_7 = im.crop((705, 660, 755, 695)).resize((100, 100))
+    ACS_7.save(os.path.join(ROOT_DIR, "images\\P7\\ACS.jpg"), "png")
+    FB_7 = im.crop((1175, 660, 1225, 695)).resize((100, 100))
+    FB_7.save(os.path.join(ROOT_DIR, "images\\P7\\FB.jpg"), "png")
 
     # Player 8 stats
     name_8 = im.crop((335, 715, 485, 740)).resize((300, 50))
@@ -112,6 +141,10 @@ def create_images(file_path) -> None:
     Assists_8.save(os.path.join(ROOT_DIR, "images\\P8\\Assists.jpg"), "png")
     Character_4 = im.crop((280, 705, 340, 755))
     Character_4.save(os.path.join(ROOT_DIR, "images\\P8\\Character.jpg"), "png")
+    ACS_8 = im.crop((705, 710, 755, 745)).resize((100, 100))
+    ACS_8.save(os.path.join(ROOT_DIR, "images\\P8\\ACS.jpg"), "png")
+    FB_8 = im.crop((1175, 710, 1225, 745)).resize((100, 100))
+    FB_8.save(os.path.join(ROOT_DIR, "images\\P8\\FB.jpg"), "png")
 
     # Player 9 stats
     name_9 = im.crop((335, 770, 485, 795)).resize((300, 50))
@@ -124,6 +157,10 @@ def create_images(file_path) -> None:
     Assists_9.save(os.path.join(ROOT_DIR, "images\\P9\\Assists.jpg"), "png")
     Character_4 = im.crop((280, 757, 340, 807))
     Character_4.save(os.path.join(ROOT_DIR, "images\\P9\\Character.jpg"), "png")
+    ACS_9 = im.crop((705, 765, 755, 800)).resize((100, 100))
+    ACS_9.save(os.path.join(ROOT_DIR, "images\\P9\\ACS.jpg"), "png")
+    FB_9 = im.crop((1175, 765, 1225, 800)).resize((100, 100))
+    FB_9.save(os.path.join(ROOT_DIR, "images\\P9\\FB.jpg"), "png")
 
     # Player 10 stats
     name_10 = im.crop((335, 820, 485, 845)).resize((300, 50))
@@ -136,6 +173,10 @@ def create_images(file_path) -> None:
     Assists_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\Assists.jpg"), "png")
     Character_4 = im.crop((280, 809, 340, 859))
     Character_4.save(os.path.join(ROOT_DIR, "images\\P9+1\\Character.jpg"), "png")
+    ACS_10 = im.crop((705, 815, 755, 850)).resize((100, 100))
+    ACS_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\ACS.jpg"), "png")
+    FB_10 = im.crop((1175, 815, 1225, 850)).resize((100, 100))
+    FB_10.save(os.path.join(ROOT_DIR, "images\\P9+1\\FB.jpg"), "png")
 
 
 def run_comparison(file_path) -> str:
@@ -162,7 +203,7 @@ def run_comparison(file_path) -> str:
 
 def read_images(file_path) -> List[List[str]]:
     player_arr: List[List[str]] = [
-        ["Name", "Kills", "Deaths", "Assists", "Character"],
+        ["Name", "Agent", "ACS", "Kills", "Deaths", "Assists", "First Bloods"],
         [],
         [],
         [],
@@ -193,6 +234,21 @@ def read_images(file_path) -> List[List[str]]:
         data = pytesseract.image_to_string(thresh, lang="eng", config="--psm 6")
         player_arr[i].append(data.strip())
 
+        # Character
+        image_path = f"{folders[i - 1]}\\Character.jpg"
+        player_arr[i].append(run_comparison(image_path))
+
+        # ACS
+        image_path = f"{folders[i - 1]}\\ACS.jpg"
+        image = cv2.imread(image_path, 0)
+        thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
+            1
+        ]
+        data = pytesseract.image_to_string(
+            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
+        )
+        player_arr[i].append(data.strip())
+
         # Kills
         image_path = f"{folders[i - 1]}\\Kills.jpg"
         image = cv2.imread(image_path, 0)
@@ -205,17 +261,6 @@ def read_images(file_path) -> List[List[str]]:
         player_arr[i].append(data.strip())
 
         # Assists
-        image_path = f"{folders[i - 1]}\\Deaths.jpg"
-        image = cv2.imread(image_path, 0)
-        thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
-            1
-        ]
-        data = pytesseract.image_to_string(
-            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
-        )
-        player_arr[i].append(data.strip())
-
-        # Deaths
         image_path = f"{folders[i - 1]}\\Assists.jpg"
         image = cv2.imread(image_path, 0)
         thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
@@ -226,9 +271,28 @@ def read_images(file_path) -> List[List[str]]:
         )
         player_arr[i].append(data.strip())
 
-        # Character
-        image_path = f"{folders[i - 1]}\\Character.jpg"
-        player_arr[i].append(run_comparison(image_path))
+        # Deaths
+        image_path = f"{folders[i - 1]}\\Deaths.jpg"
+        image = cv2.imread(image_path, 0)
+        thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
+            1
+        ]
+        data = pytesseract.image_to_string(
+            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
+        )
+        player_arr[i].append(data.strip())
+
+        # First Bloods
+        image_path = f"{folders[i - 1]}\\FB.jpg"
+        image = cv2.imread(image_path, 0)
+        thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[
+            1
+        ]
+        data = pytesseract.image_to_string(
+            thresh, lang="eng", config="--psm 6 -c tessedit_char_whitelist=0123456789"
+        )
+        player_arr[i].append(data.strip())
+        
 
     print(player_arr)
     return player_arr
