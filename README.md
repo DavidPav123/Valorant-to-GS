@@ -1,3 +1,4 @@
+## Depriciated, replaced by: https://github.com/DavidPav123/Valorant-to-Goggle-Sheets-and-CSV.git
 # Valorant-to-GS
 
 Usage instructions:
